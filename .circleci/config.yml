@@ -8,7 +8,9 @@ jobs:
       - image: cimg/node:18.9.0
     steps:
       - checkout
-      - snyk/scan
+      - snyk/scan:
+          monitor-on-build: true
+          token-variable: SNYK_TOKEN
 
 workflows:
   test:
